@@ -1,0 +1,15 @@
+name = "memes-inbox-bot"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+GITHUB_REPO = "PlanetaryCouncil/memes-shop"
+# Switch to "main" once main exists.
+GITHUB_BRANCH = "claude/blissful-ramanujan-hb53wh"
+
+# Secrets (set with `npx wrangler secret put NAME`, never commit them):
+#   TELEGRAM_TOKEN    from @BotFather
+#   WEBHOOK_SECRET    any long random string; Telegram sends it back on every call
+#   GITHUB_TOKEN      fine-grained token: this repo only, Contents + Issues read/write
+#   ALLOWED_USER_IDS  your Telegram numeric user id(s), comma-separated

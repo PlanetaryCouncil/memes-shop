@@ -71,3 +71,8 @@ category or image file.
 4. **Payments + fulfilment.** Likely path: Stripe Checkout (or similar) for payment, and a print-on-demand
    API (Printful, Gelato, Prodigi, etc.) for making and shipping. The cart's line format
    (`designId`, `productId`, `variant`, `qty`) maps directly onto both.
+
+## Inbox bot
+
+`bot/` is a Telegram bot that commits photos and notes from your phone straight into the repo and
+onto a GitHub issue, so cloud sessions can use them. Setup: [`bot/README.md`](bot/README.md).
