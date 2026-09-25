@@ -38,10 +38,16 @@ its "extra item" rate.
 |---|---|
 | Artist %, shop %, card fees, currency, checkout on/off | `data/config.json` |
 | Product types, making costs, shipping, sizes | `data/products.json` |
-| Designs, artist credit, licence | `data/designs.json` + an SVG in `memes/` |
+| Designs, artist credit, licence, category | `data/designs.json` + an image in `memes/` |
+| Categories (name, tagline, order on the page) | `data/categories.json` |
 
 To add a meme: drop an SVG (square, 1000×1000 viewBox works best) into `memes/` and add an entry to
 `data/designs.json`. It appears on every product automatically.
+
+To add a category: add an entry to `data/categories.json` (order in the file = order on the page), then set
+`"category": "<its id>"` on designs. An empty category shows "Designs landing soon". SVG, PNG and JPG all
+work; portrait images are shown whole, not cropped. `npm test` fails if a design points at a missing
+category or image file.
 
 ## Status: what's placeholder
 

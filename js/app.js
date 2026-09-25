@@ -4,11 +4,13 @@ import { mockup } from './mockups.js';
 const $ = (sel, root = document) => root.querySelector(sel);
 const CART_KEY = 'memes-shop-cart-v1';
 
-const [config, products, designs] = await Promise.all(
-  ['config', 'products', 'designs'].map((f) => fetch(`data/${f}.json`).then((r) => r.json()))
+const [config, products, designs, categories] = await Promise.all(
+  ['config', 'products', 'designs', 'categories'].map((f) => fetch(`data/${f}.json`).then((r) => r.json()))
 );
 const productsById = Object.fromEntries(products.map((p) => [p.id, p]));
 const designsById = Object.fromEntries(designs.map((d) => [d.id, d]));
+const categoriesById = Object.fromEntries(categories.map((c) => [c.id, c]));
+const designsIn = (catId) => designs.filter((d) => d.category === catId);
 
 const fmt = new Intl.NumberFormat(config.locale, { style: 'currency', currency: config.currency });
 const money = (pence) => fmt.format(pence / 100);
@@ -58,6 +60,32 @@ function addToCart(line) {
 // ---------- views ----------
 const cheapest = Math.min(...products.map((p) => itemBreakdown(p, config).total));
 
+function designCard(d) {
+  return `
+      <a class="card" href="#/d/${d.id}">
+        <img src="${d.file}" alt="${esc(d.title)}" loading="lazy">
+        <div class="card-body">
+          <h2>${esc(d.title)}</h2>
+          <p>${esc(d.blurb)}</p>
+          <span class="from">from ${money(cheapest)}</span>
+        </div>
+      </a>`;
+}
+
+function categoryGrid(c) {
+  const items = designsIn(c.id);
+  return items.length
+    ? `<div class="grid">${items.map(designCard).join('')}</div>`
+    : `<p class="empty">Designs landing soon.</p>`;
+}
+
+function categoryNav(activeId) {
+  return `<nav class="cats" aria-label="Categories">
+    <a href="#/" ${activeId ? '' : 'aria-current="page"'}>All</a>
+    ${categories.map((c) => `<a href="#/c/${c.id}" ${c.id === activeId ? 'aria-current="page"' : ''}>${esc(c.name)}</a>`).join('')}
+  </nav>`;
+}
+
 function viewShop() {
   return `
   <section class="hero">
@@ -66,16 +94,29 @@ function viewShop() {
       you pay what the thing costs to make and ship, plus ${pct(config.artistShareOfProduction)} of the
       making cost to the artist. Every price shows its receipt. <a href="#/ledger">Read the ledger →</a></p>
   </section>
-  <section class="grid">
-    ${designs.map((d) => `
-      <a class="card" href="#/d/${d.id}">
-        <img src="${d.file}" alt="${esc(d.title)}" loading="lazy">
-        <div class="card-body">
-          <h2>${esc(d.title)}</h2>
-          <p>${esc(d.blurb)}</p>
-          <span class="from">from ${money(cheapest)}</span>
-        </div>
-      </a>`).join('')}
+  ${categoryNav()}
+  ${categories.map((c) => `
+  <section class="category" id="cat-${c.id}">
+    <header class="cat-head">
+      <h2><a href="#/c/${c.id}">${esc(c.name)}</a></h2>
+      <p class="cat-tagline">${esc(c.tagline)}</p>
+    </header>
+    ${categoryGrid(c)}
+  </section>`).join('')}`;
+}
+
+function viewCategory(id) {
+  const c = categoriesById[id];
+  if (!c) return viewNotFound();
+  return `
+  ${categoryNav(c.id)}
+  <section class="category">
+    <header class="cat-head big">
+      <h1>${esc(c.name)}</h1>
+      <p class="cat-tagline">${esc(c.tagline)}</p>
+      ${c.blurb ? `<p>${esc(c.blurb)}</p>` : ''}
+    </header>
+    ${categoryGrid(c)}
   </section>`;
 }
 
@@ -85,7 +126,9 @@ function viewDesign(id, productId) {
   const p = productsById[productId] || products[0];
   const b = itemBreakdown(p, config);
   return `
-  <a class="back" href="#/">← all memes</a>
+  ${categoriesById[d.category]
+    ? `<a class="back" href="#/c/${d.category}">← ${esc(categoriesById[d.category].name)}</a>`
+    : `<a class="back" href="#/">← all memes</a>`}
   <section class="design">
     <div class="mock">${mockup(p.id, d.file, `${d.title} on a ${p.name}`)}</div>
     <div class="panel">
@@ -112,7 +155,7 @@ function viewDesign(id, productId) {
 
       <div class="free">
         <strong>Just want the meme?</strong> Take it. It's ${esc(d.license)}.
-        <a class="btn-ghost" href="${d.file}" download>Download SVG</a>
+        <a class="btn-ghost" href="${d.file}" download>Download ${esc(d.file.split('.').pop().toUpperCase())}</a>
       </div>
     </div>
   </section>`;
@@ -217,6 +260,7 @@ function route() {
   const main = $('#main');
   if (!view) main.innerHTML = viewShop();
   else if (view === 'd') main.innerHTML = viewDesign(a, b);
+  else if (view === 'c') main.innerHTML = viewCategory(a);
   else if (view === 'ledger') main.innerHTML = viewLedger();
   else main.innerHTML = viewNotFound();
 
