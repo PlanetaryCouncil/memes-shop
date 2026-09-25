@@ -1,0 +1,19 @@
+{
+  "shopName": "Memes Shop",
+  "tagline": "The meme is free. The atoms cost money. Here's exactly how much.",
+  "currency": "GBP",
+  "locale": "en-GB",
+
+  "artistShareOfProduction": 0.20,
+  "shopShareOfProduction": 0.00,
+  "shopShareNote": "Business model TBD. Currently the shop takes nothing.",
+
+  "paymentFee": {
+    "percent": 0.015,
+    "fixedPence": 20,
+    "note": "PLACEHOLDER — typical UK card processing. Replace with your processor's actual rate."
+  },
+
+  "checkoutLive": false,
+  "costsAreEstimates": true
+}

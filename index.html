@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memes Shop</title>
+  <meta name="description" content="Free memes. Honest prices on the things you print them on.">
+  <link rel="icon" href="memes/meme-is-free.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <a href="#/" id="brand" class="brand">Memes Shop</a>
+    <nav class="nav">
+      <a href="#/">Shop</a>
+      <a href="#/ledger">Ledger</a>
+      <button id="cart-toggle" class="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <main id="main"><p class="muted">Loading…</p></main>
+
+  <aside id="cart" class="drawer" aria-hidden="true" aria-label="Cart">
+    <div class="drawer-head">
+      <h2>Cart</h2>
+      <button id="cart-close" aria-label="Close cart">×</button>
+    </div>
+    <div id="cart-body"></div>
+  </aside>
+
+  <footer class="foot">
+    <p>Memes: free, CC BY-SA unless stated. Prices: <a href="#/ledger">itemised</a>. Trackers: none.</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

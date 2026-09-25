@@ -1,0 +1,50 @@
+[
+  {
+    "id": "meme-is-free",
+    "title": "This Meme Is Free",
+    "file": "memes/meme-is-free.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "The whole business model, on a shirt."
+  },
+  {
+    "id": "ctrl-c",
+    "title": "Ctrl+C Is a Love Language",
+    "file": "memes/ctrl-c.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Copying is how culture says 'I like this'."
+  },
+  {
+    "id": "market-share",
+    "title": "Projected Market Share",
+    "file": "memes/market-share.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Our investor deck, in full."
+  },
+  {
+    "id": "extraction",
+    "title": "Extraction? In This Economy?",
+    "file": "memes/extraction.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "For people who read the fine print."
+  },
+  {
+    "id": "post-scarcity",
+    "title": "Post-Scarcity (Installing)",
+    "file": "memes/post-scarcity.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Almost there. Any minute now."
+  },
+  {
+    "id": "memes-want-to-be-free",
+    "title": "Memes Want To Be Free",
+    "file": "memes/memes-want-to-be-free.svg",
+    "artist": "House (placeholder)",
+    "license": "CC BY-SA 4.0",
+    "blurb": "They were never in the box to begin with."
+  }
+]

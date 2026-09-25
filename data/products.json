@@ -1,0 +1,47 @@
+[
+  {
+    "id": "tshirt",
+    "name": "T-shirt",
+    "spec": "Organic cotton, 180gsm, direct-to-garment print",
+    "productionPence": 1150,
+    "shippingFirstPence": 450,
+    "shippingExtraPence": 150,
+    "variants": ["S", "M", "L", "XL", "XXL"]
+  },
+  {
+    "id": "jumper",
+    "name": "Jumper",
+    "spec": "Organic cotton sweatshirt, 300gsm, direct-to-garment print",
+    "productionPence": 2400,
+    "shippingFirstPence": 550,
+    "shippingExtraPence": 250,
+    "variants": ["S", "M", "L", "XL", "XXL"]
+  },
+  {
+    "id": "sticker",
+    "name": "Sticker",
+    "spec": "Die-cut vinyl, 8cm, waterproof",
+    "productionPence": 120,
+    "shippingFirstPence": 110,
+    "shippingExtraPence": 0,
+    "variants": []
+  },
+  {
+    "id": "poster",
+    "name": "Poster",
+    "spec": "A3 giclée on 200gsm matte paper, shipped in a tube",
+    "productionPence": 900,
+    "shippingFirstPence": 500,
+    "shippingExtraPence": 100,
+    "variants": []
+  },
+  {
+    "id": "mug",
+    "name": "Mug",
+    "spec": "11oz ceramic, dishwasher safe, sublimation print",
+    "productionPence": 750,
+    "shippingFirstPence": 550,
+    "shippingExtraPence": 250,
+    "variants": []
+  }
+]

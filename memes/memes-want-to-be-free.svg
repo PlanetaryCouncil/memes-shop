@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <rect width="1000" height="1000" fill="#3d7fff"/>
+  <g font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" fill="#f6f1e7" text-anchor="middle">
+    <text x="500" y="170" font-size="110">MEMES WANT</text>
+    <text x="500" y="290" font-size="110">TO BE FREE</text>
+  </g>
+  <g stroke="#111" stroke-width="10" stroke-linejoin="round">
+    <path d="M330 620 L500 700 L670 620 L670 860 L500 940 L330 860 Z" fill="#c68a4a"/>
+    <path d="M500 700 L500 940" fill="none"/>
+    <path d="M330 620 L250 540 L420 470 L500 700 Z" fill="#dda466"/>
+    <path d="M670 620 L750 540 L580 470 L500 700 Z" fill="#dda466"/>
+  </g>
+  <g font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="54" fill="#e8ff3d" stroke="#111" stroke-width="3">
+    <text x="360" y="420" transform="rotate(-18 360 420)">lol</text>
+    <text x="560" y="380" transform="rotate(12 560 380)">:)</text>
+    <text x="180" y="500" transform="rotate(-30 180 500)">ok</text>
+    <text x="740" y="470" transform="rotate(20 740 470)">wow</text>
+  </g>
+</svg>

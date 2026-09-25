@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <rect width="1000" height="1000" fill="#ff3d7f"/>
+  <g font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" fill="#111" text-anchor="middle">
+    <text x="500" y="420" font-size="150" textLength="860" lengthAdjust="spacingAndGlyphs">EXTRACTION?</text>
+    <text x="500" y="600" font-size="90">in <tspan fill="#f6f1e7">THIS</tspan> economy?</text>
+  </g>
+  <line x1="60" y1="370" x2="940" y2="370" stroke="#f6f1e7" stroke-width="24"/>
+  <g font-family="'Courier New',monospace" font-size="32" fill="#111" text-anchor="middle">
+    <text x="500" y="780">production + artist + shipping + card fees</text>
+    <text x="500" y="830">= the price. that's it. that's the meme.</text>
+  </g>
+</svg>
