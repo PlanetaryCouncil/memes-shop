@@ -30,7 +30,6 @@ jobs:
         run: |
           mkdir _site
           cp -r index.html css js data memes _site/
-          [ -d inbox ] && cp -r inbox _site/ || true
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
       - id: deployment
