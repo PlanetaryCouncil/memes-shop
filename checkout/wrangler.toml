@@ -1,0 +1,12 @@
+name = "memes-checkout"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# Where the shop is served from (exact origin, no trailing slash) and its path.
+SHOP_ORIGIN = "https://planetarycouncil.github.io"
+SHOP_PATH = "/memes-shop/"
+SHIP_COUNTRIES = "GB"
+
+# Secret (never commit): npx wrangler secret put STRIPE_SECRET_KEY
+#   use sk_test_… first, swap to sk_live_… when ready.

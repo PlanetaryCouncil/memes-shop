@@ -196,7 +196,7 @@ fees   = what the card processor takes (${pct(config.paymentFee.percent)} + ${mo
     <ul>
       <li>Whether the shop takes a cut, and how much. Right now: nothing.</li>
       <li>Who covers misprints, returns and lost parcels.</li>
-      <li>Payments. Checkout is ${config.checkoutLive ? 'live' : 'not live yet'}.</li>
+      <li>Payments. Checkout is ${config.checkoutLive ? 'live, via Stripe' : 'not live yet'}.</li>
     </ul>
 
     <h2>What we don't do</h2>
@@ -234,8 +234,42 @@ function renderCart() {
     }).join('')}</ul>
     ${splitBar(t)}
     ${breakdownList(t)}
-    <button class="checkout" ${config.checkoutLive ? '' : 'disabled'}>Checkout</button>
+    <button class="checkout" id="checkout" ${config.checkoutLive ? '' : 'disabled'}>Checkout</button>
+    <p class="muted small" id="checkout-msg" role="status"></p>
     ${config.checkoutLive ? '' : `<p class="muted small">Checkout isn't live yet — payments are still being set up. Your cart is saved in this browser only.</p>`}`;
+}
+
+async function checkout() {
+  const btn = $('#checkout');
+  const msg = $('#checkout-msg');
+  btn.disabled = true;
+  btn.textContent = 'Opening secure checkout…';
+  msg.textContent = '';
+  try {
+    const res = await fetch(config.checkoutUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ lines: cart }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.url) throw new Error(data.error || 'Checkout failed');
+    location.href = data.url;
+  } catch (e) {
+    msg.textContent = `${e.message}. Nothing was charged — try again?`;
+    btn.disabled = false;
+    btn.textContent = 'Checkout';
+  }
+}
+
+function viewThanks() {
+  cart = [];
+  saveCart();
+  return `<section class="prose">
+    <h1>Paid. Thank you.</h1>
+    <p>Stripe has emailed your receipt. Your order goes to print next, and we'll email when it ships.</p>
+    <p>Where your money went is exactly what the cart showed: <a href="#/ledger">the ledger</a>.</p>
+    <p><a href="#/">Back to the memes →</a></p>
+  </section>`;
 }
 
 function openCart() { $('#cart').classList.add('open'); $('#cart').setAttribute('aria-hidden', 'false'); }
@@ -245,6 +279,7 @@ $('#cart-toggle').addEventListener('click', openCart);
 $('#cart-close').addEventListener('click', closeCart);
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCart(); });
 $('#cart-body').addEventListener('click', (e) => {
+  if (e.target.id === 'checkout') return checkout();
   const btn = e.target.closest('button[data-i]');
   if (!btn) return;
   const line = cart[+btn.dataset.i];
@@ -262,6 +297,7 @@ function route() {
   else if (view === 'd') main.innerHTML = viewDesign(a, b);
   else if (view === 'c') main.innerHTML = viewCategory(a);
   else if (view === 'ledger') main.innerHTML = viewLedger();
+  else if (view.startsWith('thanks')) main.innerHTML = viewThanks();
   else main.innerHTML = viewNotFound();
 
   const form = $('#add');

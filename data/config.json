@@ -15,5 +15,6 @@
   },
 
   "checkoutLive": false,
+  "checkoutUrl": "",
   "costsAreEstimates": true
 }

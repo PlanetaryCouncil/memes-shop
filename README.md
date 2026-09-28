@@ -54,7 +54,8 @@ category or image file.
 - **Making and shipping costs are estimates**, not supplier quotes. Replace with real numbers from your
   print-on-demand partner or printer before taking money.
 - **Card fee** (1.5% + 20p) is a placeholder for a typical UK card rate. Use your processor's actual rate.
-- **Checkout is off** (`checkoutLive: false`). The cart works and persists in the browser; nothing is charged.
+- **Checkout is built but off** (`checkoutLive: false`) until the Stripe Worker is deployed: see
+  [`checkout/README.md`](checkout/README.md).
 - **Artist** is "House (placeholder)" on all six starter designs, which were made for this repo.
 - **Meme SVGs use live text**, so they render in whatever fonts the viewer has. Convert text to outlines
   before sending to a printer.
