@@ -20,7 +20,7 @@ test('every design belongs to a known category', () => {
 });
 
 test('every design file exists', () => {
-  for (const d of designs) assert.ok(existsSync(new URL(d.file, root)), `missing ${d.file}`);
+  for (const d of designs) for (const f of [d.file, d.full].filter(Boolean)) assert.ok(existsSync(new URL(f, root)), `missing ${f}`);
 });
 
 test('garment tones are valid and every tone has colours to offer', () => {

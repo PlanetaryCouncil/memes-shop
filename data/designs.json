@@ -8,7 +8,8 @@
     "bg": "#111",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Your breakthrough technology might come in handy later."
+    "blurb": "Your breakthrough technology might come in handy later.",
+    "full": "memes/moonshots/full/moonshots-profitable.webp"
   },
   {
     "id": "frontier-liberation-front",
@@ -19,7 +20,8 @@
     "bg": "#000",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Defensive co-scaling."
+    "blurb": "Defensive co-scaling.",
+    "full": "memes/moonshots/full/frontier-liberation-front.webp"
   },
   {
     "id": "factors-accelerating-singularity",
@@ -30,7 +32,8 @@
     "bg": "#000",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Moonshot Mates edition."
+    "blurb": "Said by the Moonshot Mates.",
+    "full": "memes/moonshots/full/factors-accelerating-singularity.webp"
   },
   {
     "id": "ai-is-math-free-speech-banned",
@@ -41,7 +44,8 @@
     "bg": "#000",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "AI is math. Math is free speech. You cannot ban AI."
+    "blurb": "AI is math. Math is free speech. You cannot ban AI.",
+    "full": "memes/moonshots/full/ai-is-math-free-speech-banned.webp"
   },
   {
     "id": "dataset-worth-more-than-model",
@@ -52,7 +56,8 @@
     "bg": "#111",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "The weights are downstream."
+    "blurb": "The weights are downstream.",
+    "full": "memes/moonshots/full/dataset-worth-more-than-model.webp"
   },
   {
     "id": "being-founder",
@@ -63,7 +68,8 @@
     "bg": "#111",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Being a founder was always “other people took your job”. Now AI does it."
+    "blurb": "Being a founder was always “other people took your job”. Now AI does it.",
+    "full": "memes/moonshots/full/being-founder.webp"
   },
   {
     "id": "start-technology-company",
@@ -74,7 +80,8 @@
     "bg": "#111",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "If you love technology, work for someone else. If you start a technology company, you'll work on everything except technology."
+    "blurb": "If you love technology, work for someone else. If you start a technology company, you'll work on everything except technology.",
+    "full": "memes/moonshots/full/start-technology-company.webp"
   },
   {
     "id": "you-learn-nothing-being-right",
@@ -85,7 +92,8 @@
     "bg": "#0d0d0d",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "You learn nothing when you're right."
+    "blurb": "You learn nothing when you're right.",
+    "full": "memes/moonshots/full/you-learn-nothing-being-right.webp"
   },
   {
     "id": "comes-from-scientist-scientific",
@@ -96,7 +104,8 @@
     "bg": "#111",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Just because something comes from a scientist doesn't mean it is scientific."
+    "blurb": "Just because something comes from a scientist doesn't mean it is scientific.",
+    "full": "memes/moonshots/full/comes-from-scientist-scientific.webp"
   },
   {
     "id": "2-assholes-problem",
@@ -107,7 +116,8 @@
     "bg": "#fff",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "The key to running a successful business is knowing how to manage the 2 assholes problem."
+    "blurb": "The key to running a successful business is knowing how to manage the 2 assholes problem.",
+    "full": "memes/moonshots/full/2-assholes-problem.webp"
   },
   {
     "id": "reatrdation-consciousness",
@@ -116,7 +126,8 @@
     "file": "memes/reatrdation-consciousness.webp",
     "artist": "Planetary Council",
     "license": "CC BY-SA 4.0",
-    "blurb": "Spelling is a construct. So is the UFO."
+    "blurb": "Spelling is a construct. So is the UFO.",
+    "full": "memes/full/reatrdation-consciousness.webp"
   },
   {
     "id": "meme-is-free",

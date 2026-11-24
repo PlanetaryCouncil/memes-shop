@@ -160,7 +160,7 @@ function viewDesign(id, productId) {
 
       <div class="free">
         <strong>Just want the meme?</strong> Take it. It's ${esc(d.license)}.
-        <a class="btn-ghost" href="${d.file}" download>Download ${esc(d.file.split('.').pop().toUpperCase())}</a>
+        <a class="btn-ghost" href="${d.full || d.file}" download>Download ${d.full ? 'full-size ' : ''}${esc((d.full || d.file).split('.').pop().toUpperCase())}</a>
       </div>
     </div>
   </section>`;
