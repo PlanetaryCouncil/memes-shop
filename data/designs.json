@@ -1,5 +1,115 @@
 [
   {
+    "id": "moonshots-profitable",
+    "title": "Not All Moonshots Need to Be Immediately Profitable",
+    "category": "moonshots",
+    "file": "memes/moonshots/moonshots-profitable.webp",
+    "garments": "dark",
+    "bg": "#111",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Your breakthrough technology might come in handy later."
+  },
+  {
+    "id": "frontier-liberation-front",
+    "title": "Frontier Liberation Front",
+    "category": "moonshots",
+    "file": "memes/moonshots/frontier-liberation-front.webp",
+    "garments": "dark",
+    "bg": "#000",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Defensive co-scaling."
+  },
+  {
+    "id": "factors-accelerating-singularity",
+    "title": "We Are the Factors in Accelerating Singularity",
+    "category": "moonshots",
+    "file": "memes/moonshots/factors-accelerating-singularity.webp",
+    "garments": "dark",
+    "bg": "#000",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Moonshot Mates edition."
+  },
+  {
+    "id": "ai-is-math-free-speech-banned",
+    "title": "AI Is Math",
+    "category": "moonshots",
+    "file": "memes/moonshots/ai-is-math-free-speech-banned.webp",
+    "garments": "any",
+    "bg": "#000",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "AI is math. Math is free speech. You cannot ban AI."
+  },
+  {
+    "id": "dataset-worth-more-than-model",
+    "title": "Dataset Is Worth More Than Model",
+    "category": "moonshots",
+    "file": "memes/moonshots/dataset-worth-more-than-model.webp",
+    "garments": "dark",
+    "bg": "#111",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "The weights are downstream."
+  },
+  {
+    "id": "being-founder",
+    "title": "Now AI Does It",
+    "category": "moonshots",
+    "file": "memes/moonshots/being-founder.webp",
+    "garments": "dark",
+    "bg": "#111",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Being a founder was always “other people took your job”. Now AI does it."
+  },
+  {
+    "id": "start-technology-company",
+    "title": "Everything Except Technology",
+    "category": "moonshots",
+    "file": "memes/moonshots/start-technology-company.webp",
+    "garments": "dark",
+    "bg": "#111",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "If you love technology, work for someone else. If you start a technology company, you'll work on everything except technology."
+  },
+  {
+    "id": "you-learn-nothing-being-right",
+    "title": "You Learn When You're Wrong",
+    "category": "moonshots",
+    "file": "memes/moonshots/you-learn-nothing-being-right.webp",
+    "garments": "dark",
+    "bg": "#0d0d0d",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "You learn nothing when you're right."
+  },
+  {
+    "id": "comes-from-scientist-scientific",
+    "title": "Doesn't Mean It Is Scientific",
+    "category": "moonshots",
+    "file": "memes/moonshots/comes-from-scientist-scientific.webp",
+    "garments": "dark",
+    "bg": "#111",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "Just because something comes from a scientist doesn't mean it is scientific."
+  },
+  {
+    "id": "2-assholes-problem",
+    "title": "The 2 Assholes Problem",
+    "category": "moonshots",
+    "file": "memes/moonshots/2-assholes-problem.webp",
+    "garments": "light",
+    "bg": "#fff",
+    "artist": "Planetary Council",
+    "license": "CC BY-SA 4.0",
+    "blurb": "The key to running a successful business is knowing how to manage the 2 assholes problem."
+  },
+  {
     "id": "reatrdation-consciousness",
     "title": "Reatrdation Is a Higest Form of Consciousnes",
     "category": "cosmic",

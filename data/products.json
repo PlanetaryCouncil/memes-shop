@@ -6,7 +6,14 @@
     "productionPence": 1150,
     "shippingFirstPence": 450,
     "shippingExtraPence": 150,
-    "variants": ["S", "M", "L", "XL", "XXL"]
+    "variants": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "garment": true
   },
   {
     "id": "jumper",
@@ -15,7 +22,14 @@
     "productionPence": 2400,
     "shippingFirstPence": 550,
     "shippingExtraPence": 250,
-    "variants": ["S", "M", "L", "XL", "XXL"]
+    "variants": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "garment": true
   },
   {
     "id": "sticker",

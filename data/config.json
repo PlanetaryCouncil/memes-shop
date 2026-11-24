@@ -3,18 +3,47 @@
   "tagline": "The meme is free. The atoms cost money. Here's exactly how much.",
   "currency": "GBP",
   "locale": "en-GB",
-
-  "artistShareOfProduction": 0.20,
-  "shopShareOfProduction": 0.00,
+  "artistShareOfProduction": 0.2,
+  "shopShareOfProduction": 0.0,
   "shopShareNote": "Business model TBD. Currently the shop takes nothing.",
-
   "paymentFee": {
     "percent": 0.015,
     "fixedPence": 20,
     "note": "PLACEHOLDER — typical UK card processing. Replace with your processor's actual rate."
   },
-
   "checkoutLive": false,
   "checkoutUrl": "",
-  "costsAreEstimates": true
+  "costsAreEstimates": true,
+  "garmentColours": [
+    {
+      "name": "Black",
+      "hex": "#161616",
+      "tone": "dark"
+    },
+    {
+      "name": "Navy",
+      "hex": "#1e2a44",
+      "tone": "dark"
+    },
+    {
+      "name": "Charcoal",
+      "hex": "#3b3b3d",
+      "tone": "dark"
+    },
+    {
+      "name": "White",
+      "hex": "#fafafa",
+      "tone": "light"
+    },
+    {
+      "name": "Natural",
+      "hex": "#f1e9d6",
+      "tone": "light"
+    },
+    {
+      "name": "Heather grey",
+      "hex": "#c9c9cb",
+      "tone": "light"
+    }
+  ]
 }

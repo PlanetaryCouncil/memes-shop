@@ -11,6 +11,9 @@ const productsById = Object.fromEntries(products.map((p) => [p.id, p]));
 const designsById = Object.fromEntries(designs.map((d) => [d.id, d]));
 const categoriesById = Object.fromEntries(categories.map((c) => [c.id, c]));
 const designsIn = (catId) => designs.filter((d) => d.category === catId);
+// A design made for dark fabric (light ink) only offers dark garments, and vice versa.
+const coloursFor = (d) => config.garmentColours.filter((c) => !['dark', 'light'].includes(d.garments) || c.tone === d.garments);
+const bgStyle = (d) => (d.bg ? ` style="background:${d.bg}"` : '');
 
 const fmt = new Intl.NumberFormat(config.locale, { style: 'currency', currency: config.currency });
 const money = (pence) => fmt.format(pence / 100);
@@ -63,7 +66,7 @@ const cheapest = Math.min(...products.map((p) => itemBreakdown(p, config).total)
 function designCard(d) {
   return `
       <a class="card" href="#/d/${d.id}">
-        <img src="${d.file}" alt="${esc(d.title)}" loading="lazy">
+        <img src="${d.file}" alt="${esc(d.title)}" loading="lazy"${bgStyle(d)}>
         <div class="card-body">
           <h2>${esc(d.title)}</h2>
           <p>${esc(d.blurb)}</p>
@@ -125,12 +128,13 @@ function viewDesign(id, productId) {
   if (!d) return viewNotFound();
   const p = productsById[productId] || products[0];
   const b = itemBreakdown(p, config);
+  const colours = p.garment ? coloursFor(d) : [];
   return `
   ${categoriesById[d.category]
     ? `<a class="back" href="#/c/${d.category}">← ${esc(categoriesById[d.category].name)}</a>`
     : `<a class="back" href="#/">← all memes</a>`}
   <section class="design">
-    <div class="mock">${mockup(p.id, d.file, `${d.title} on a ${p.name}`)}</div>
+    <div class="mock">${mockup(p.id, d.file, `${d.title} on a ${p.name}`, { garment: colours[0]?.hex, bg: d.bg })}</div>
     <div class="panel">
       <h1>${esc(d.title)}</h1>
       <p class="muted">by ${esc(d.artist)} · ${esc(d.license)}</p>
@@ -142,6 +146,7 @@ function viewDesign(id, productId) {
 
       <form id="add" class="add">
         ${p.variants.length ? `<label>Size <select name="variant">${p.variants.map((v) => `<option>${v}</option>`).join('')}</select></label>` : ''}
+        ${colours.length ? `<label>Colour <select name="colour">${colours.map((c) => `<option value="${c.name}" data-hex="${c.hex}">${c.name}</option>`).join('')}</select></label>` : ''}
         <label>Qty <input name="qty" type="number" min="1" max="99" value="1"></label>
         <button type="submit">Add to cart</button>
       </form>
@@ -226,7 +231,7 @@ function renderCart() {
     <ul class="lines">${cart.map((l, i) => {
       const d = designsById[l.designId], p = productsById[l.productId];
       return `<li>
-        <img src="${d.file}" alt="">
+        <img src="${d.file}" alt=""${bgStyle(d)}>
         <div><strong>${esc(d.title)}</strong><br><small>${p.name}${l.variant ? ` · ${l.variant}` : ''} · ${money(itemBreakdown(p, config).total)}</small></div>
         <div class="qty">
           <button data-i="${i}" data-d="-1" aria-label="One fewer">−</button><span>${l.qty}</span><button data-i="${i}" data-d="1" aria-label="One more">+</button>
@@ -301,13 +306,19 @@ function route() {
   else main.innerHTML = viewNotFound();
 
   const form = $('#add');
+  const colour = form && form.elements.colour;
+  if (colour) colour.addEventListener('change', () => {
+    const d = designsById[a], p = productsById[b] || products[0];
+    $('.mock').innerHTML = mockup(p.id, d.file, `${d.title} on a ${p.name}`,
+      { garment: colour.selectedOptions[0].dataset.hex, bg: d.bg });
+  });
   if (form) form.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(form);
     addToCart({
       designId: a,
       productId: productsById[b] ? b : products[0].id,
-      variant: fd.get('variant') || '',
+      variant: [fd.get('variant'), fd.get('colour')].filter(Boolean).join(' · '),
       qty: Math.max(1, Math.min(99, parseInt(fd.get('qty'), 10) || 1)),
     });
   });

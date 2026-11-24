@@ -76,6 +76,7 @@ main { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; min-height: 7
 .add { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin-bottom: 24px; }
 .add label { display: flex; flex-direction: column; font-weight: 600; font-size: .9rem; }
 .add select, .add input { font: inherit; padding: 8px; border: 2px solid var(--ink); background: #fff; width: 90px; }
+.add select[name=colour] { width: 140px; }
 .add button, .checkout { background: var(--pink); color: var(--ink); border: 3px solid var(--ink); padding: 10px 20px;
   font-weight: 800; box-shadow: 4px 4px 0 var(--ink); }
 .add button:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--ink); }

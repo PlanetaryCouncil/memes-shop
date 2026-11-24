@@ -22,3 +22,12 @@ test('every design belongs to a known category', () => {
 test('every design file exists', () => {
   for (const d of designs) assert.ok(existsSync(new URL(d.file, root)), `missing ${d.file}`);
 });
+
+test('garment tones are valid and every tone has colours to offer', () => {
+  const config = load('config.json');
+  for (const d of designs) {
+    if (d.garments === undefined) continue;
+    assert.ok(['dark', 'light', 'any'].includes(d.garments), `${d.id} has unknown garments "${d.garments}"`);
+    if (d.garments !== 'any') assert.ok(config.garmentColours.some((c) => c.tone === d.garments), `no ${d.garments} garments for ${d.id}`);
+  }
+});
