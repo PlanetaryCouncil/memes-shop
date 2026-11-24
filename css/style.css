@@ -124,7 +124,6 @@ td small { color: var(--muted); }
 .qty { display: flex; align-items: center; gap: 6px; }
 .qty button { width: 28px; height: 28px; border: 2px solid var(--ink); background: #fff; font-weight: 800; }
 
-.foot { border-top: 3px solid var(--ink); padding: 16px; text-align: center; font-size: .9rem; }
 
 @media (max-width: 760px) {
   .design { grid-template-columns: 1fr; }
